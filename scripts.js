@@ -31,3 +31,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // this is where I will put other scripts for the project
 // such as form validation, API calls, etc.
+// section indicator
+document.addEventListener("DOMContentLoaded", () => {
+    const circles = document.querySelectorAll(".circle");
+    const sections = document.querySelectorAll("section");
+  
+    const updateActiveCircle = () => {
+      let activeSection = null;
+  
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          activeSection = section.id;
+        }
+      });
+  
+      circles.forEach((circle) => {
+        if (circle.dataset.section === activeSection) {
+          circle.classList.add("active");
+        } else {
+          circle.classList.remove("active");
+        }
+      });
+    };
+  
+    window.addEventListener("scroll", updateActiveCircle);
+    updateActiveCircle(); // Run on page load
+  });
+
+

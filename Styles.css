@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
 
-/* The main styles applied for the page */
+/** The main styles applied for the page */
 
 * {
   margin: 0;
@@ -15,7 +15,7 @@
   --primary-color: #284b63;
   --secondary-color: #3c6e71;
   --accent-color: #d9d9d9;
-  --backrount-color: #353535;
+  --backrount-color: #262626;
   --text-color: #ffffff;
   --font-family: "Rubik Mono One", sans-serif;
 }
@@ -45,15 +45,47 @@ a {
   text-decoration: none;
   color: var(--text-color);
   margin: 10px;
-  padding: 5px 12px;
+  padding: 0;
   position: relative;
-  transition: color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
+  transition: color 0.4s ease-in-out, letter-spacing 0.3s ease-in-out;
 }
 
 a:hover {
-  opacity: 0.8;
-  color: var(--accent-color);
+  opacity: 0.4;
   letter-spacing: 2px;
+  color: var(--accent-color);
+}
+
+.light:hover {
+  animation: neon-flicker 1.5s infinite alternate;
+}
+
+@keyframes neon-flicker {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+      0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4);
+    opacity: 1;
+  }
+  25% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+      0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+    opacity: 0.9;
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1),
+      0 0 30px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.8);
+    opacity: 1;
+  }
+  75% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
+      0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.2);
+    opacity: 0.7;
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1),
+      0 0 30px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.8);
+    opacity: 1;
+  }
 }
 
 ul {
@@ -72,7 +104,7 @@ ul {
   padding: 0 15px;
 }
 
-/* nav__bar */
+/** nav__bar */
 
 .personal__logo {
   font-size: 24px;
@@ -122,16 +154,17 @@ nav {
   }
 }
 
-/* Desktop Navigation */
+/** Desktop Navigation */
 .desktop-nav {
   display: flex;
 }
 
 .mobile-nav {
-  display: none; 
+  display: none;
   position: relative;
 }
 
+/** Mobile Navigation */
 .dropdown-toggle {
   background: none;
   border: none;
@@ -175,14 +208,16 @@ nav {
   position: absolute;
   top: 50px;
   right: 20px;
-  padding: 0;
   background-color: transparent;
   padding: 0;
   list-style: none;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
   line-height: 1.5;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .dropdown-menu li {
@@ -191,6 +226,8 @@ nav {
   white-space: nowrap;
   animation: none;
   position: relative;
+  border: none;
+  outline: none;
 }
 
 .dropdown-menu li.active {
@@ -213,6 +250,10 @@ nav {
   animation-delay: 1.5s;
 }
 
+.dropdown-menu li:hover {
+  text-shadow: none;
+}
+
 /* Typewriter effect */
 @keyframes typewriter-word {
   0% {
@@ -228,6 +269,8 @@ nav {
     opacity: 1;
   }
 }
+
+/* closing menu animations   */
 
 /* Type bar (cursor) */
 .dropdown-menu li::after {
@@ -276,11 +319,254 @@ nav {
   }
 }
 
-/* about me section! */
-#about-me {
+/* section indicators */
+.section-indicator {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
   display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.circle.active {
+  background-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
+}
+/* about me section! */
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   min-height: 100vh;
+  padding: 200px;
+  background-color: var(--background-color);
+}
+
+.about-section--title {
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  text-align: left;
+  margin-left: 50px;
+  margin-top: -20px;
+  flex: 1;
+  max-width: 100%;
+  margin-bottom: 120px;
+}
+
+.landing__title {
+  position: relative;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+  line-height: 1.4;
+  width: 100%;
+  text-align: left;
+  animation: neon-flicker-subtle 5s infinite alternate; /* Add subtle neon flicker animation */
+}
+
+.landing__title::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+@keyframes neon-flicker-subtle {
+  0% {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.3),
+      0 0 4px rgba(255, 255, 255, 0.2), 0 0 6px rgba(255, 255, 255, 0.1);
+  }
+  25% {
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.4),
+      0 0 6px rgba(255, 255, 255, 0.3), 0 0 8px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.5),
+      0 0 8px rgba(255, 255, 255, 0.4), 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  75% {
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.4),
+      0 0 6px rgba(255, 255, 255, 0.3), 0 0 8px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.3),
+      0 0 4px rgba(255, 255, 255, 0.2), 0 0 6px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.about-content--title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.about-content--text {
+  font-size: 8.6px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-left: 20px;
+  position: relative;
+}
+
+.about-content--text::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+
+/** Scroll Arrow */
+.scroll-arrow {
+    position: absolute;
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    font-size: 24px; 
+    color: var(--accent-color); 
+    animation: bounce 2.5s infinite; 
+    cursor: pointer; 
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-10px); /* Move up slightly */
+    }
+  }
+
+/** Mobile Usage */
+/* ! Needs to be optmized so that the drop down button works again */
+
+/* General Mobile Styles */
+@media screen and (max-width: 768px) {
+  /* Adjust the about section layout for mobile */
+  .about-section {
+    flex-direction: column; /* Stack content vertically */
+    padding: 50px 20px; /* Reduce padding for smaller screens */
+  }
+
+  .about-section--title {
+    align-items: center; /* Center align the title */
+    text-align: center; /* Center text */
+    margin-left: 0; /* Remove left margin */
+    margin-bottom: 20px; /* Reduce bottom margin */
+    max-width: 100%; /* Ensure it spans the full width */
+  }
+
+  .landing__title {
+    font-size: 28px; /* Reduce font size for smaller screens */
+  }
+
+  .header-info {
+    font-size: 12px; /* Adjust font size */
+    text-align: center; /* Center align text */
+    align-items: center; /* Center align content */
+  }
+
+  .about-content {
+    align-items: center; /* Center align content */
+    text-align: center; /* Center text */
+    margin-right: 0; /* Remove right margin */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .about-content--title {
+    font-size: 18px; /* Adjust font size */
+    margin-bottom: 10px;
+  }
+
+  .about-content--text {
+    font-size: 12px; /* Adjust font size */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  /* Adjust section indicators for mobile */
+  .section-indicator {
+    left: 10px; /* Move closer to the edge */
+    gap: 10px; /* Reduce spacing between circles */
+  }
+
+  .circle {
+    width: 8px; /* Reduce size of circles */
+    height: 8px;
+  }
+
+  /* Adjust navigation for mobile */
+  .dropdown-toggle {
+    top: 10px; /* Adjust position */
+    right: 10px;
+  }
+
+  .dropdown-menu {
+    top: 40px; /* Adjust dropdown position */
+    right: 10px;
+    max-height: 200px; /* Reduce max height */
+  }
+
+  .dropdown-menu li {
+    font-size: 14px; /* Adjust font size */
+  }
+
+  /* Adjust padding and spacing for general elements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 18px; /* Reduce heading sizes */
+  }
+
+  a {
+    font-size: 14px; /* Adjust link font size */
+  }
+
+  ul {
+    padding: 0; /* Remove extra padding */
+  }
+
+  .row {
+    padding: 0 10px; /* Reduce padding for rows */
+  }
 }

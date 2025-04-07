@@ -14,14 +14,20 @@
   </head>
   <body>
     <div class="title__container--wrapper">
-      <section id="aboutme">
-        <div class="personal__logo"><a href="#secret" class="secret__bttn">TI</a></div>
+      <section id="nav__container">
+        <div class="personal__logo">
+          <a class="light" href="#secret" class="secret__bttn">TI</a>
+        </div>
         <nav class="desktop-nav">
           <ul class="nav__link--list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="mailto:iversongthomas@gmail.com">Contact</a></li>
+            <li><a class="light" href="#home">Home</a></li>
+            <li><a class="light" href="#about">About</a></li>
+            <li><a class="light" href="#skills">Skills</a></li>
+            <li>
+              <a class="light" href="mailto:iversongthomas@gmail.com"
+                >Contact</a
+              >
+            </li>
           </ul>
         </nav>
 
@@ -33,27 +39,43 @@
             <span class="bar"></span>
           </button>
           <ul class="dropdown-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="mailto:iversongthomas@gmail.com">Contact</a></li>
+            <li>
+              <a class="light" href="mailto:iversongthomas@gmail.com"
+                >Contact</a
+              >
+            </li>
           </ul>
         </div>
 
-        <div class="flex flex-1">
-          <div class="tab__circle">
-            <!-- <i class="fa-regular fa-circle"></i> -->
-            <!-- <i class="fa-solid fa-circle"></i> -->
-          </div>
-          <div class="about-me__info row">
-            <div class="about-me__info--container">
-              <figure class="about-me__picture--mask">
-                <h1>
-                  <!-- Hey, I'm <span class="Typeography"> Thomas Iverson</span> -->
-                </h1>
-              </figure>
-            </div>
-          </div>
+        <div class="section-indicator">
+          <div class="circle" data-section="about"></div>
+          <div class="circle" data-section="skills"></div>
+          <div class="circle" data-section="Contact"></div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="about-section--title">
+          <h1 class="landing__title">Thomas Iverson</h1>
+          <p class="header-info">
+            Frontend Developer <br/>
+            ui/ux designer
+          </p>
+        </div>
+
+        <div class="about-content">
+          <h2 class="about-content--title">About Me</h2>
+          <p class="about-content--text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Praesentium perferendis molestiae similique commodi atque veniam
+            repellat nam aperiam quaerat dolorem temporibus earum corporis sint
+            ea, labore accusamus non nostrum ratione illo fugit obcaecati. Atque
+            earum velit magnam vero natus tempore, nobis, doloremque architecto
+            odio iusto, illum provident est? Aliquid, voluptas?
+          </p>
+        </div>
+        <div class="scroll-arrow">
+          <span>&#x2193;</span>
         </div>
       </section>
     </div>
