@@ -475,6 +475,12 @@ nav {
     }
   }
 
+  .scroll-arrow:hover {
+    color: var(--primary-color); 
+    animation: neon-flicker 1.5s infinite alternate;
+    transform: translateX(-50%) translateY(0);
+  }
+
 /** Mobile Usage */
 /* ! Needs to be optmized so that the drop down button works again */
 
