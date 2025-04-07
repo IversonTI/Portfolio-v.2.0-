@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doccument</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/c73ccf6df1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <title>Portfolio(v.2.0)</title>
+  </head>
+  <body>
     <div class="title__container--wrapper">
-        Portfolio v.2
+      <section id="aboutme">
+        <div class="personal__logo"><a href="#secret" class="secret__bttn">TI</a></div>
+        <nav class="desktop-nav">
+          <ul class="nav__link--list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="mailto:iversongthomas@gmail.com">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Dropdown Menu -->
+        <div class="mobile-nav">
+          <button class="dropdown-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="mailto:iversongthomas@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="flex flex-1">
+          <div class="about-me__info row">
+            <div class="about-me__info--container">
+              <figure class="about-me__picture--mask">
+                <h1>
+                  <!-- Hey, I'm <span class="Typeography"> Thomas Iverson</span> -->
+                </h1>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    
-</body>
+  </body>
 </html>
