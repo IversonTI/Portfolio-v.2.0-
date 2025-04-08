@@ -59,4 +59,54 @@ document.addEventListener("DOMContentLoaded", () => {
     updateActiveCircle(); // Run on page load
   });
 
+//   This script handles the filter functionality for the project items
+
+//? make it so that when the filter is applied the page doens't jump to the top
+
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectItems = document.querySelectorAll(".project-item");
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault(); // Prevent any default behavior (e.g., jumping)
+
+      // Remove active class from all buttons
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      // Add active class to the clicked button
+      button.classList.add("active");
+
+      const filter = button.getAttribute("data-filter");
+
+      // Show/Hide projects based on the filter
+      projectItems.forEach((item) => {
+        if (filter === "all" || item.classList.contains(filter)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+});
+
+// This script handles the scroll arrow functionality for navigation between sections
+document.addEventListener("DOMContentLoaded", () => {
+  const arrows = document.querySelectorAll(".scroll-arrow a");
+
+  window.addEventListener("scroll", () => {
+    arrows.forEach((arrow) => {
+      const section = arrow.closest("section");
+      const rect = section.getBoundingClientRect();
+
+      if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
+        arrow.innerHTML = "&#x2191;"; // Point up if at the top
+        arrow.href = "#top";
+      } else {
+        arrow.innerHTML = "&#x2193;"; // Point down otherwise
+        arrow.href = `#${section.nextElementSibling?.id || "top"}`;
+      }
+    });
+  });
+});
 
