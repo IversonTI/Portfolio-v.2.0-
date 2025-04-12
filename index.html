@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/c73ccf6df1.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/c73ccf6df1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css" />
     <script src="scripts.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <title>Portfolio(v.2.0)</title>
   </head>
+
   <body>
     <div class="title__container--wrapper">
       <section id="nav__container">
@@ -20,13 +19,11 @@
         </div>
         <nav class="desktop-nav">
           <ul class="nav__link--list">
-            <li><a class="light" href="#home">Home</a></li>
+            <li><a class="light" href="#projects">Projects</a></li>
             <li><a class="light" href="#about">About</a></li>
             <li><a class="light" href="#skills">Skills</a></li>
             <li>
-              <a class="light" href="mailto:iversongthomas@gmail.com"
-                >Contact</a
-              >
+              <a class="light" href="mailto:iversongthomas@gmail.com">Contact</a>
             </li>
           </ul>
         </nav>
@@ -40,9 +37,7 @@
           </button>
           <ul class="dropdown-menu">
             <li>
-              <a class="light" href="mailto:iversongthomas@gmail.com"
-                >Contact</a
-              >
+              <a class="light" href="mailto:iversongthomas@gmail.com">Contact</a>
             </li>
           </ul>
         </div>
@@ -58,7 +53,7 @@
         <div class="about-section--title">
           <h1 class="landing__title">Thomas Iverson</h1>
           <p class="header-info">
-            Frontend Developer <br />
+            Front-end Engineer <br />
             ui/ux designer
           </p>
         </div>
@@ -66,18 +61,22 @@
         <div class="about-content">
           <h2 class="about-content--title">About Me</h2>
           <p class="about-content--text">
-            I’m Thomas Iverson, a Front-End Developer and UI/UX Designer
+            Hi, I'm Thomas Iverson, a Front-End Engineer and UI/UX Designer
             dedicated to crafting intuitive, aesthetically compelling digital
             experiences. With a deep understanding of design principles and
             front-end technologies, I fuse creativity and functionality to
             deliver seamless, user-centered solutions that engage and inspire.
           </p>
         </div>
-        <div class="scroll-arrow">
-          <a href="#skills">
-            <span>&#x2193;</span>
-          </a>
+
+        <div class="scroll-arrow--wrapper">
+          <div class="scroll-arrow">
+            <a href="#skills">
+              <span>&#x2193;</span>
+            </a>
+          </div>
         </div>
+
       </section>
 
       <section id="skills" class="skills-section">
@@ -132,52 +131,71 @@
           <a href="#projects">
             <span class="arrow">&#x2193;</span>
           </a> -->
-        </div>
-
-      </section>
-
-      <section id="projects" class="projects-section">
-        <!-- Projects Heading -->
-        <!-- <div class="projects-heading">
-          <h2>Projects</h2>
-          <p>Explore some of the work I've done across various domains.</p>
-        </div> -->
-
-        <!-- Projects Content -->
-        <div class="projects-container">
-          <!-- Filter Buttons -->
-          <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="frontend">Frontend</button>
-            <button class="filter-btn" data-filter="uiux">UI/UX</button>
-            <button class="filter-btn" data-filter="backend">Backend</button>
-          </div>
-
-          <!-- Projects Grid -->
-          <div class="projects-grid">
-            <div class="project-item frontend">
-              <h3>Portfolio Website</h3>
-              <p>A responsive portfolio showcasing my work.</p>
-            </div>
-            <div class="project-item uiux">
-              <h3>Mobile App Design</h3>
-              <p>UI/UX design for a productivity app.</p>
-            </div>
-            <div class="project-item backend">
-              <h3>API Development</h3>
-              <p>RESTful API for a task management system.</p>
-            </div>
-            <div class="project-item frontend">
-              <h3>E-commerce Website</h3>
-              <p>A fully functional e-commerce platform.</p>
-            </div>
-            <div class="project-item uiux">
-              <h3>Dashboard Design</h3>
-              <p>Interactive dashboard for analytics.</p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
+
+    </section>
+
+    <section id="projects" class="projects-section">
+      <!-- Projects Heading -->
+      <div class="projects-heading">
+        <h2>Projects</h2>
+        <p class="projects-subheading">These are past works</p>
+      </div>
+
+      <!-- Projects Content -->
+      <div class="projects-container">
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="uiux">UI/UX</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <div class="project-item frontend">
+            <h3>Portfolio Website</h3>
+            <p>A responsive portfolio showcasing my work.</p>
+          </div>
+          <div class="project-item uiux">
+            <h3>Mobile App Design</h3>
+            <p>UI/UX design for a productivity app.</p>
+          </div>
+          <div class="project-item backend">
+            <h3>API Development</h3>
+            <p>RESTful API for a task management system.</p>
+          </div>
+          <div class="project-item frontend">
+            <h3>E-commerce Website</h3>
+            <p>A fully functional e-commerce platform.</p>
+          </div>
+          <div class="project-item uiux">
+            <h3>Dashboard Design</h3>
+            <p>Interactive dashboard for analytics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+    <footer class="footer">
+      <div class="footer-arrow">
+        <a href="#top" class="scroll-to-top">
+          <span>&#x2191;</span>
+        </a>
+      </div>
+      <div class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a class="light" href="#projects">Projects</a></li>
+          <li><a class="light" href="#about">About</a></li>
+          <li><a class="light" href="#skills">Skills</a></li>
+          <li><a class="light" href="mailto:iversongthomas@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2025 Thomas Iverson. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
+
 </html>

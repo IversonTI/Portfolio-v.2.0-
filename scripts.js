@@ -33,31 +33,34 @@ document.addEventListener("DOMContentLoaded", () => {
 // such as form validation, API calls, etc.
 // section indicator
 document.addEventListener("DOMContentLoaded", () => {
-    const circles = document.querySelectorAll(".circle");
-    const sections = document.querySelectorAll("section");
-  
-    const updateActiveCircle = () => {
-      let activeSection = null;
-  
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-          activeSection = section.id;
-        }
-      });
-  
-      circles.forEach((circle) => {
-        if (circle.dataset.section === activeSection) {
-          circle.classList.add("active");
-        } else {
-          circle.classList.remove("active");
-        }
-      });
-    };
-  
-    window.addEventListener("scroll", updateActiveCircle);
-    updateActiveCircle(); // Run on page load
-  });
+  const circles = document.querySelectorAll(".circle");
+  const sections = document.querySelectorAll("section");
+
+  const updateActiveCircle = () => {
+    let activeSection = null;
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (
+        rect.top <= window.innerHeight / 2 &&
+        rect.bottom >= window.innerHeight / 2
+      ) {
+        activeSection = section.id;
+      }
+    });
+
+    circles.forEach((circle) => {
+      if (circle.dataset.section === activeSection) {
+        circle.classList.add("active");
+      } else {
+        circle.classList.remove("active");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", updateActiveCircle);
+  updateActiveCircle(); // Run on page load
+});
 
 //   This script handles the filter functionality for the project items
 
@@ -110,3 +113,42 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const arrowWrappers = document.querySelectorAll(".scroll-arrow-wrapper");
+
+  arrowWrappers.forEach((wrapper) => {
+    wrapper.addEventListener("click", () => {
+      const arrow = wrapper.querySelector(".scroll-arrow");
+      const href = arrow.getAttribute("href");
+      const targetSection = document.querySelector(href);
+
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        console.error(`Target section "${href}" not found.`);
+      }
+    });
+  });
+});
+
+//* Indication circle interactions
+document.addEventListener("DOMContentLoaded", () => {
+  const circles = document.querySelectorAll(".circle");
+
+  circles.forEach((circle) => {
+    circle.addEventListener("click", () => {
+      const sectionId = circle.getAttribute("data-section");
+      const section = document.getElementById(sectionId);
+
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      } else {
+        console.error(`Section with id "${sectionId}" not found.`);
+      }
+    });
+  });
+});
+
+console.log("Section", section);
+console.log("Rect", rect);
+console.log("Arrow", arrow);
