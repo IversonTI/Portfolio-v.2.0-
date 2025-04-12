@@ -358,6 +358,25 @@ nav {
   transform: scale(1.2);
 }
 /* about me section! */
+
+.about-section--icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
+  margin-bottom: 20px; /* Space below the icons */
+}
+
+.icon-link {
+  font-size: 14px; /* Icon size */
+  color: var(--text-color); /* Default icon color */
+  transition: all 0.5s ease-in-out;
+  text-decoration: none; /* Remove underline */
+}
+
+.icon-link:hover {
+  color: var(--primary-color); /* Change color on hover */
+}
+
 .about-section {
   display: flex;
   justify-content: space-between;
